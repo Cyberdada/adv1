@@ -1,0 +1,50 @@
+
+
+
+Room 
+	Name 
+	Description
+	TimesEntered
+	OnEnter
+	OnLeave
+Exits
+
+condition
+name.flag 
+operator
+less equal greater
+response
+
+
+Player 
+MaxColume
+
+
+Object 
+Location
+Volume
+IsContainer
+CanBeTaken
+	TakeMessage
+CanBeDropped
+	DropMessage
+Description 
+Usable
+	{...  == all objects}
+Giveable
+Switchable
+Edible
+Verbs
+
+
+IsContainer
+	CanbeOpened
+	CanBeClosed
+	CanBeLocked
+	IsOpen
+	Transparent
+	HideChildren Until looked at
+		OnOpen
+		OnCLose
+
+

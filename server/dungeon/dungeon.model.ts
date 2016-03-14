@@ -1,12 +1,8 @@
 export class roomModel
 {
-	
-	north: number; 
-	south: number;
-	east: number;
-	west: number;
 	name: string;
 	description: string;
+	exits: Array<string>;
 	type:string; 
 	index:number;
 	dungeonId: string;
@@ -16,9 +12,7 @@ export class roomModel
 export class dungeonModel 
 {
 	name:string;
-	created: Date;
-	creator: string;
-	
+	created: Date;	
 }
 
 
