@@ -1,4 +1,15 @@
 
+Conditions
+noun.flag operator value 
+
+
+Result 
+noun.flag = x
+noun.flag = w
+destroy noun
+create noun
+inc noun.flag
+dec noun.flag
 
 
 Room 
