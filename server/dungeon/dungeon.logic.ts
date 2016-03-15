@@ -1,5 +1,7 @@
 /// <reference path="../types/lodash.d.ts" />
 
+
+// Code for autopopulating dungeon. Not relevant anynore. 
 import {dungeonModel, roomModel, typeperc} from  './dungeon.model';
 import  * as lodash from "lodash";
 const MAXROOMS = 10000;
@@ -28,7 +30,6 @@ export class dungeonLogic {
 		{
 			let newRoom : roomModel =new roomModel;	
 			newRoom.index = i;
-			
 			newRoom.north = i < nofsInRow ? -1: i - nofsInRow; 
 			newRoom.south = i + nofsInRow > totalRooms -1 ? -1: i + nofsInRow;           
 			newRoom.east = i % nofsInRow  === nofsInRow -1 ? -1: i + 1;

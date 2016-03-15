@@ -13,10 +13,10 @@ import methodOverride = require("method-override");
 
 
 
-import * as project from "./routes/project.Route";
-import * as user from "./routes/user.Route";
-import * as node from "./routes/node.route";
-import * as connection from "./routes/connection.route";
+import * as dungeon from "./dungeon/dungeon.route";
+import * as player from "./player/player.route";
+import * as artifact from "./artifact/artifact.route";
+import * as room from "./room/room.route";
 
 
 var app = express();
@@ -36,6 +36,36 @@ console.log(lpath);
 
 
 // ALL ROUTES HERE!!!!
+app.post(  '/api/dungeons', dungeon.save);
+app.get(   '/api/dungeons', dungeon.load);
+app.get(   '/api/dungeons/:id', dungeon.loadById);
+
+console.log('player');
+
+
+app.get(   '/api/dungeons/:id/players/', player.loadByDungeonId);
+app.post(  '/api/players', player.save);
+app.get(   '/api/players', player.load);
+app.get(   '/api/players/:id', player.loadById);
+app.post(  '/api/players/:id', player.copyFromTemplate);
+app.post(  '/api/rooms/:id/players', player.loadByRoomId);
+
+console.log('rooms');
+
+app.get(   '/api/dungeons/:id/rooms/', room.loadByDungeonId);
+app.post(  '/api/rooms', room.save);
+app.get(   '/api/rooms', room.load);
+app.get(   '/api/rooms/:id', room.loadById);
+
+console.log('slartifarts');
+
+app.get(   '/api/dungeons/:id/rooms/', artifact.loadByDungeonId);
+app.post(  '/api/artifacts', artifact.save);
+app.get(   '/api/artifacts', artifact.load);
+app.get(   '/api/artifacts/:id', artifact.loadById);
+
+console.log('routes done');
+
 
 //app.get('/projects', project.list);
 
@@ -81,7 +111,7 @@ app.use(function(err: any, req: any, res: any, next: any) {
 
 
 //var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/requirmentRocker', function(err: any) {
+mongoose.connect('mongodb://localhost/advent1', function(err: any) {
   if (err) {
     console.log('connection error', err);
   } else {

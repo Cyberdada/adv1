@@ -1,15 +1,28 @@
 
+
+verb
+
 Conditions
 noun.flag operator value 
 
 
-Result 
+results 
 noun.flag = x
 noun.flag = w
 destroy noun
 create noun
 inc noun.flag
 dec noun.flag
+
+
+set 
+destroy 
+create
+inc 
+dec
+message
+
+
 
 
 Room 
@@ -19,6 +32,10 @@ Room
 	OnEnter
 	OnLeave
 Exits
+
+
+Flags
+
 
 condition
 name.flag 

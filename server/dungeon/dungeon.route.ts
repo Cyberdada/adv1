@@ -6,14 +6,14 @@ import mongoose = require("mongoose");
 
      
 export function  save(req: express.Request, res: express.Response) {
-var dungeon = mongoose.model<IdungeonModel>("Dungeon", dungeonSchema);
+var dungeon = mongoose.model<IdungeonModel>("dungeon", dungeonSchema);
 
-var id:any;
-if(req.body_id === null || req.body_id === undefined) {
-    id = new mongoose.Types.ObjectId();
+
+if(req.body._id === null || req.body._id === undefined) {
+    req.body._id = new mongoose.Types.ObjectId();
 }
-console.log(id);
-dungeon.update({_id: id}, req.body, {upsert: true}, function(err, newItm) {
+
+dungeon.update({_id:  req.body._id}, req.body, {upsert: true}, function(err, newItm) {
    
     if (err) {
         return res.json({status: 500, error: err});
@@ -26,7 +26,7 @@ dungeon.update({_id: id}, req.body, {upsert: true}, function(err, newItm) {
 
 export function load (req: express.Request, res: express.Response ) {
     console.log("getting dungeons");
-    var dungeon = mongoose.model<IdungeonModel>("Dungeon", dungeonSchema);
+    var dungeon = mongoose.model<IdungeonModel>("dungeon", dungeonSchema);
     var q = dungeon.find({}).sort("name");
     q.exec(function (err, db_articles) {
     if(err) { 
@@ -39,7 +39,7 @@ export function load (req: express.Request, res: express.Response ) {
 
 export function loadById ( req: express.Request, res: express.Response ) {
     
-     var dungeon = mongoose.model<IdungeonModel>("Dungeon", dungeonSchema);
+     var dungeon = mongoose.model<IdungeonModel>("dungeon", dungeonSchema);
    dungeon.findById(req.params.id, function (err, db_article) {
     if (err) {
             return res.json({status: 500, error: err});
