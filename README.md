@@ -121,7 +121,7 @@ GET| ```/api/artifacts/:id```|Get a particular Artifact
 	       "value": "mixed" 
 	  }]] 
 	  }] 
-	```
+```
 
 Commands available in results: 
 set 
@@ -137,21 +137,27 @@ message
 When selecting a verb 
 given that a set of conditions is ok 
 (noun.flag operator value ) 
+
 ex: 
 take axe
 
 given that 
 axe.canBeTaken = true 
+
 and 
+
 inventory.freevolume > axe.volume
 
 inventory add axe
 
 ex 2: 
+
 eat bread
+
 bread.isEdible = true
 
 destroy bread
+
 player.hunger dec 10
 
 
