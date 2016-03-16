@@ -8,3 +8,22 @@ http://localhost:3000/api/rooms
   "exits": [ {"name":"East", "type":"normal" }, {"name":"West", "type":"normal" }] 
   
 }
+
+
+http://localhost:3000/api/players
+{
+  "name": "Dirk Diggler",
+  "dungeonId": "56e82a43922b08a02c5e6851" ,
+  "picture" : "http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/e3/e3b94dac5a31e98713c64009c36913bf95f5e8f4_full.jpg", 
+  "isActive":true, 
+  "isAlive":true, 
+  "isTemplate":false, 
+  "flags": [{
+    "name": "hunger", 
+    "type":"number", 
+    "value": 0}, 
+            { "name": "happiness", 
+            "type": "number", 
+             "value": 100}], 
+   "roomId": "56e83a3c69c2ca9c352ea3e2"
+  }

@@ -48,7 +48,7 @@ app.post(  '/api/players', player.save);
 app.get(   '/api/players', player.load);
 app.get(   '/api/players/:id', player.loadById);
 app.post(  '/api/players/:id', player.copyFromTemplate);
-app.post(  '/api/rooms/:id/players', player.loadByRoomId);
+
 
 console.log('rooms');
 
@@ -56,10 +56,13 @@ app.get(   '/api/dungeons/:id/rooms/', room.loadByDungeonId);
 app.post(  '/api/rooms', room.save);
 app.get(   '/api/rooms', room.load);
 app.get(   '/api/rooms/:id', room.loadById);
+app.get(  '/api/rooms/:id/players', player.loadByRoomId);
 
 console.log('slartifarts');
 
-app.get(   '/api/dungeons/:id/rooms/', artifact.loadByDungeonId);
+app.get(   '/api/dungeons/:id/artifacts/', artifact.loadByDungeonId);
+app.get(   '/api/room/:id/artifacts/', artifact.loadByRoomId);
+
 app.post(  '/api/artifacts', artifact.save);
 app.get(   '/api/artifacts', artifact.load);
 app.get(   '/api/artifacts/:id', artifact.loadById);
