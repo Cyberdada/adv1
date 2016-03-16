@@ -47,7 +47,6 @@ GET| ```/api/artifacts/:id```|Get a particular Artifact
    "description": "string",
    "exits":  [{
       "name":"string", 
-       "type": "string", 
        "leadsToRoomId": "string"} ], // bson objectId
    "type":"string"; 
   "actions": [ {
