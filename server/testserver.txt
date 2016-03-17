@@ -2,7 +2,7 @@ http://localhost:3000/api/rooms
 
 {
   "name": "The Hallway"
-  "dungeonId": "56e82a43922b08a02c5e6851" 
+  "dungeonId": "56ea9c58e5b3b7ec37005e83" 
   "picture" : "https://upload.wikimedia.org/wikipedia/commons/2/2f/Esp-hallway-seeminglee.jpg", 
   "description" :"This is where heroes die.",
   "exits": [ {"name":"East", "type":"normal" }, {"name":"West", "type":"normal" }] 
@@ -27,3 +27,6 @@ http://localhost:3000/api/players
              "value": 100}], 
    "roomId": "56e83a3c69c2ca9c352ea3e2"
   }
+  
+  http://localhost:3000/api/dungeons
+  

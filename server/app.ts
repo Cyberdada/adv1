@@ -11,7 +11,7 @@ import *  as bodyParser from "body-parser";
 import mongoose = require('mongoose');
 import methodOverride = require("method-override");
 
-
+import nconf = require('nconf');
 
 import * as dungeon from "./dungeon/dungeon.route";
 import * as player from "./player/player.route";
@@ -21,7 +21,7 @@ import * as room from "./room/room.route";
 
 var app = express();
 
-
+nconf.argv().env().file({ file: __dirname +'/settings.json' });
 // uncomment after placing your favicon in /public
 app.use(favicon(__dirname + '/favicon.ico'));
 app.use(logger('dev'));
@@ -114,7 +114,10 @@ app.use(function(err: any, req: any, res: any, next: any) {
 
 
 //var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/advent1', function(err: any) {
+
+var db = nconf.get('username') + ':' + nconf.get('password')+ '@' + nconf.get('server')+ ':' +nconf.get('port');
+//mongoose.connect('mongodb://AdvReaderWriter:PH3AKYIHY0FBrer@localhost:27017/advent1', function(err: any) {
+mongoose.connect('mongodb://' + db + '/advent1', function(err: any) {
   if (err) {
     console.log('connection error', err);
   } else {
@@ -123,7 +126,7 @@ mongoose.connect('mongodb://localhost/advent1', function(err: any) {
 });
 
 
-
 module.exports = app;
 //startup.startup();
 console.log("pong");
+

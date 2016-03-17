@@ -8,7 +8,7 @@ import mongoose = require("mongoose");
 export function  save(req: express.Request, res: express.Response) {
 var dungeon = mongoose.model<IdungeonModel>("dungeon", dungeonSchema);
 
-
+console.log(JSON.stringify(req.body));
 if(req.body._id === null || req.body._id === undefined) {
     req.body._id = new mongoose.Types.ObjectId();
 }
