@@ -76,6 +76,7 @@ GET| ```/api/artifacts/:id```|Get a particular Artifact
 ```
 **Player**
 ```javascript
+         "_id": "string"     //BSON ObjectId
 	"name": "string",
 	"dungeonId": "string",
 	"picture": "string" //uri of picture
@@ -95,7 +96,8 @@ GET| ```/api/artifacts/:id```|Get a particular Artifact
 
 **Artifact**
 ```javascript
-    "name":"string", 
+     "_id": "string"     //BSON ObjectId
+     "name":"string", 
 	"type":"string",
 	"dungeonId":"string",
 	"userId": "string",
