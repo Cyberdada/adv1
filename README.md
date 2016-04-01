@@ -41,6 +41,7 @@ GET| ```/api/artifacts/:id```|Get a particular Artifact
 **Room**
 ```javascript
 { 
+    "id":"string",  //BSON ObjectId
    "name": "string",
    "dungeonId": "string",
    "picture": "string",    ///path to url image
